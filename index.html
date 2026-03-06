@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable Web App</title>
+</head>
+<body>
+    <h1>Welcome to Vulnerable App</h1>
+    
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+    
+    <h2>Search</h2>
+    <form action="/search" method="GET">
+        <input type="text" name="q" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+    
+    <h2>User Profile</h2>
+    <form action="/profile" method="GET">
+        <input type="text" name="user" placeholder="Username">
+        <button type="submit">View Profile</button>
+    </form>
+    
+    <h2>Set Cookie</h2>
+    <form action="/setcookie" method="GET">
+        <input type="text" name="value" placeholder="Cookie value">
+        <button type="submit">Set Cookie</button>
+    </form>
+    
+    <h2>Reflected Input</h2>
+    <form action="/reflect" method="GET">
+        <input type="text" name="data" placeholder="Enter text">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>Error Test</h2>
+    <form action="/error" method="GET">
+        <input type="text" name="msg" placeholder="Error message">
+        <button type="submit">Show Error</button>
+    </form>
+    
+    <h2>Redirect</h2>
+    <form action="/redirect" method="GET">
+        <input type="text" name="url" placeholder="URL" value="http://google.com">
+        <button type="submit">Go</button>
+    </form>
+    
+    <h2>File Upload</h2>
+    <a href="/upload">Upload File</a>
+    
+    <script>
+        var hash = window.location.hash.substring(1);
+        if(hash) {
+            document.write("Hash: " + hash);
+        }
+        
+        var params = new URLSearchParams(window.location.search);
+        var callback = params.get('callback');
+        if(callback) {
+            eval(callback);
+        }
+    </script>
+    
+    <img src="nonexistent.jpg" onerror="console.log('Image error')">
+    
+    <div id="content"></div>
+    
+    <a href="/admin">Admin</a> | <a href="/getcookie">View Cookie</a>
+</body>
+</html>
