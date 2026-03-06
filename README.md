@@ -12,9 +12,9 @@ Run only in isolated environment (localhost/VPN)
 Port: 5000
 </p>
 
-## Requirments
+# Requirments
 - Python
 - Flask
 
-## How to start  
-# Windows
+# How to start  
+## Windows:  
