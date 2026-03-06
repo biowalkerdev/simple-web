@@ -17,5 +17,11 @@
 - Python
 - Flask
 
-# How to start  
+# How to run  
 ## Windows:  
+Download the archive and unzip it  
+Go to the unzipped folder and run the command line  
+Now start server:  
+```python server.py```
+
+## Linux:  
