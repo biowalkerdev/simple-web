@@ -26,6 +26,7 @@ Now start server:
 
 ## Linux:  
 Download archive with git  
+Next go to directory  
 ```cd simple-web```  
 Now run server:  
 ```python3 server.py```
